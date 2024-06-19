@@ -1,0 +1,20 @@
+digraph fsm {
+    rankdir=LR;
+    size="8,5"
+    node [shape = doublecircle]; "empty" "full";
+    node [shape = circle];
+    
+    // Transitions
+    "init" [shape=none];
+    "init" -> "empty" [label="reset"];
+    
+    "empty" -> "empty" [label="!cs | !rd & !we"];
+    "empty" -> "neitherFullNorEmpty" [label="cs & we"];
+    
+    "full" -> "full" [label="!cs | !rd & !we"];
+    "full" -> "neitherFullNorEmpty" [label="cs & rd"];
+    
+    "neitherFullNorEmpty" -> "neitherFullNorEmpty" [label="cs & rd & we"];
+    "neitherFullNorEmpty" -> "empty" [label="cs & rd & addr==0"];
+    "neitherFullNorEmpty" -> "full" [label="cs & we & addr==8"];
+}

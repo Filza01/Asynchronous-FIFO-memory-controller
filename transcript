@@ -1,0 +1,8 @@
+# vsim work.FIFOtb -c -do "run; exit" 
+# Start time: 18:15:29 on Oct 11,2023
+# ** Error: (vsim-3170) Could not find 'FIFOtb'.
+#         Searched libraries:
+#             /home/user100/Documents/DLD+DSD/Final Assessment/work
+# Error loading design
+# End time: 18:15:29 on Oct 11,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
